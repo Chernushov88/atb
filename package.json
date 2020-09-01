@@ -1,0 +1,38 @@
+{
+  "name": "ATB",
+  "version": "1.0.0",
+  "description": "ATB",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp watch --dev --sync",
+    "build": "gulp build"
+  },
+  "overrideBrowserslist": [
+    "> 0.1%",
+    "last 25 version"
+  ],
+  "author": "Sergey",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chernushov88/atb"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-less": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "smart-grid": "^2.1.2"
+  }
+}
