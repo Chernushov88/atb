@@ -209,10 +209,24 @@ $(document).mouseup(function (e) {
   }
 });
 
-function showPopup(target) {
+function showPopup(target, elem, img, imgSm, arr) {
   event.preventDefault();
   $(".darken").addClass('active')
   $(target).addClass('open');
+  if (elem){
+    let title = elem.innerText;
+    console.log(title)
+    document.querySelector(`${target} .h3`).innerText = title
+    console.log(document.querySelector(`${target} .h3`).innerText)
+    document.querySelector('#baner-img .img1').src = img;
+    document.querySelector('#baner-img .img2').src = imgSm;
+    console.log(document.querySelector('#baner-img').src)
+    console.log(img)
+    let list = document.querySelector(`${target} .list`)
+    list.innerHTML = arr
+
+
+  }
 }
 
 function hidePopup(target) {
