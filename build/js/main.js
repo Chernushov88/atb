@@ -174,11 +174,17 @@ $(function ($) {
     console.log('$(window).width() > 1200', $(window).width())
     $('.menu li').hover(
       function () {
-        $(this).addClass('hover')
-        //$('.header').addClass('hover')
+        setTimeout((e)=>{
+          $(this).addClass('hover')
+          //$('.header').addClass('hover')
+        })
       },
       function () {
-        $(this).removeClass('hover')
+        setTimeout((e)=>{
+          $(this).removeClass('hover')
+          //$('.header').addClass('hover')
+        })
+        //$(this).removeClass('hover')
         //$('.header').removeClass('hover')
       }
     )
@@ -224,8 +230,6 @@ function showPopup(target, elem, img, imgSm, arr) {
     console.log(img)
     let list = document.querySelector(`${target} .list`)
     list.innerHTML = arr
-
-
   }
 }
 

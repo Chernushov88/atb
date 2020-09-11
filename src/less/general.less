@@ -246,6 +246,48 @@
                     line-height: 1.4;
                   });
                 }
+                position: relative;
+                &.hover .sub-level3{
+                  display: block;
+                }
+                .sub-level3 {
+                  display: none;
+                  position: absolute;
+                  left: 0;
+                  top: 100%;
+                  z-index: 9;
+                  width: 200%;
+                  .lg-block({
+                    width: 150%;
+                  });
+                  .md-block({
+                    position: static !important;
+                    width: auto;
+                  });
+
+                  &-in {
+                    flex-direction: column;
+
+                    li {
+                      a {
+                        display: flex;
+                        align-items: center;
+                        height: 70px;
+                        padding: 0 10px 0 45px;
+                        line-height: 20px;
+                        background: #11345c;
+                        color: #fff;
+                        .lg-block({
+                          height: 60px;
+                          padding-left: 30px;
+                        });
+                        .md-block({
+                          height: auto;
+                        });
+                      }
+                    }
+                  }
+                }
 
                 &:hover a, &.active a {
                   background: #fff;
@@ -1390,6 +1432,10 @@
 
     .popup-in {
       padding: 50px 140px;
+      max-height: 50vh;
+      overflow-y: scroll;
+      padding: 0;
+      .scroll();
       .lg-block({
         padding: 40px 20px 40px 70px;
         li {

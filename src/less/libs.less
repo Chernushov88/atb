@@ -118,28 +118,29 @@
 }
 .scroll{
   &::-webkit-scrollbar-button {
-    width: 16px;
-    height: 14px;
+    width: 10px;
+    height: 6px;
+    background: transparent;
   }
   &::-webkit-scrollbar-track {
-    margin-left: 10px;
-    border-radius: 5px;
-     background: #fff;
+    margin-left: 0px;
+    //border-radius: 5px;
+     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
     -webkit-border-radius: 0px;
-    border-radius: 10px;
-    background: #3bc8e7;
+    border-radius: 0px;
+    background: @colorBasik;
   }
   &::-webkit-scrollbar-thumb:hover {
     background: rgb(13, 197, 237);;
   }
   &::-webkit-resizer {
-    width: 15px;
-    height: 14px;
+    width: 10px;
+    height: 6px;
   }
   &::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
   }
 }
 .gradient(@start: #fed018, @end: #feb018){
