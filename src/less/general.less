@@ -23,7 +23,7 @@
     width: 100%;
 
     .header-center #menu .menu > li.act .sub {
-      display: none !important;
+      //display: none !important;
     }
 
     .header-top {
@@ -666,7 +666,25 @@
 /*------------- baner -----------------*/
 .baner {
   position: relative;
+  &-home{
+    .home-baner{
+      height: calc(100vh - 147px);
+      background: url("../img/home-baner.jpg") no-repeat;
+      background-size: cover !important;
+      .lg-block({
+        height: calc(100vh - 121px);
+        background: url("../img/home-baner-lg.jpg") no-repeat;
+      });
+      .md-block({
+        height: calc(100vh - 107px);
+        background: url("../img/home-baner-md.jpg") no-repeat;
+      });
+      .sm-block({
+        background: url("../img/home-baner-sm.jpg") no-repeat;
+      });
+    }
 
+  }
   &-col {
     position: relative;
     margin-bottom: 5px;
@@ -702,37 +720,18 @@
   .home-baner {
     display: block;
     width: 100%;
-    height: calc(100vh - 147px);
-    background: url("../img/home-baner.jpg") no-repeat;
-    background-size: cover !important;
-    .lg-block({
-      height: calc(100vh - 121px);
-    });
-    .md-block({
-      height: calc(100vh - 107px);
-    });
+
     &>img{
-      height: 100%;
-      width: auto ;
-      max-width: initial;
+      //height: 100%;
+      //width: auto ;
+      //max-width: initial;
     }
     img {
-      display: block;
+      //display: block;
+      width: 100%;
     }
 
-    .lg-block({
-      background: url("../img/home-baner-lg.jpg") no-repeat;
-    });
-    .md-block({
-      background: url("../img/home-baner-md.jpg") no-repeat;
-    });
-    .sm-block({
-      background: url("../img/home-baner-sm.jpg") no-repeat;
-      img {
-        display: block;
-        width: 100%;
-      }
-    });
+
   }
 
   .full-container {
@@ -1744,12 +1743,12 @@ div.baner-emblem {
         font-weight: 400;
 
         p {
-          padding-bottom: 20px;
+          padding-bottom: 18px;
           .lg-block({
-            padding-bottom: 10px;
+            padding-bottom: 20px;
           });
           .sm-block({
-            padding-bottom: 5px;
+            padding-bottom: 10px;
           });
         }
       }
@@ -2393,6 +2392,9 @@ ul.list {
 .thumbnail-slick-slider {
   overflow: hidden;
   padding-top: 60px;
+  &-in{
+    position: relative;
+  }
   .lg-block({
     padding-top: 40px;
   });
@@ -2554,36 +2556,51 @@ ul.list {
     });
   }
   .pagerNavigation{
-    width: 60px;
-    height: 60px;
-    margin-top: 20px;
+    position: absolute;
+    bottom: 226px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: @sizeBasik + 6;
+    font-size: @sizeBasik + 23;
     color: #fff;
     background: @colorBasik;
-    border: 2px solid @colorBasik;
+    border: 1px solid @colorBasik;
     outline: 0;
+    span{
+      line-height: 0.5;
+      display: inline-block;
+      padding-bottom: 2px;
+    }
     .transition(0.5s);
     .lg-block({
-      height: 60px;
-      margin-top: 15px;
-      font-size: @sizeBasik;
-      border-width: 1px;
+      bottom: 137px;
+      width: 38px;
+      height: 38px;
+      font-size: @sizeBasik + 13;
     });
     .md-block({
-      height: 50px;
+      display: none;
     });
     .sm-block({
-      height: 40px;
+      display: none;
     });
 
     &:hover {
       background-color: #fff;
       color: @colorBasik;
     }
-    &-bottom{
-
+    &-next{
+      left: 103px;
+      .lg-block({
+        left: 82px;
+      });
+    }
+    &-prev{
+      left: 20px;
     }
   }
 }

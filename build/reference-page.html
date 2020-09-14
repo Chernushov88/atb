@@ -162,11 +162,11 @@
           <img src="img/reference-page/gallery.jpg" alt="">
         </figure>
       </div>
-      <div class="pagerNavigation pagerNavigation-bottom">
-        <span class="bottom"><i class="fa fa-angle-left"></i></span>
+      <div class="pagerNavigation pagerNavigation-prev">
+        <span class="prev"><i class="fa fa-angle-left"></i></span>
       </div>
-      <div class="pagerNavigation pagerNavigation-top">
-        <span class="top"><i class="fa fa-angle-right"></i></span>
+      <div class="pagerNavigation pagerNavigation-next">
+        <span class="next"><i class="fa fa-angle-right"></i></span>
       </div>
       <div class="slider-nav-thumbnails">
         <div><img src="img/reference-page/thumb-1.jpg" alt=""></div>
@@ -253,7 +253,7 @@
       <input type="text" placeholder="Имя *" required>
       <input type="text" placeholder="E-mail *" class="phone">
       <div class="checkbox-block">
-        <input type="checkbox" class="checkbox" id="check">
+        <input type="checkbox" class="checkbox"  id="check" checked="checked">
         <label for="check">
           <span>Ознакомлен с политикой конфиденциальности</span>
         </label>
@@ -279,7 +279,7 @@
   $('.slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     fade: false,
     asNavFor: '.slider-nav-thumbnails',
   });
@@ -287,12 +287,11 @@
   $('.slider-nav-thumbnails').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
-    nextArrow: $('.pagerNavigation .bottom'),
-    prevArrow: $('.pagerNavigation .top'),
+    nextArrow: $('.pagerNavigation .next'),
+    prevArrow: $('.pagerNavigation .prev'),
     asNavFor: '.slider',
     dots: false,
     focusOnSelect: true,
-    centerPadding: '60px',
   });
 
   // Remove active class from all thumbnail slides
