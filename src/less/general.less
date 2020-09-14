@@ -2554,35 +2554,36 @@ ul.list {
     });
   }
   .pagerNavigation{
-    &-bottom{
-      width: 60px;
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: @sizeBasik + 6;
+    color: #fff;
+    background: @colorBasik;
+    border: 2px solid @colorBasik;
+    outline: 0;
+    .transition(0.5s);
+    .lg-block({
       height: 60px;
-      margin-top: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: @sizeBasik + 6;
-      color: #fff;
-      background: @colorBasik;
-      border: 2px solid @colorBasik;
-      outline: 0;
-      .transition(0.5s);
-      .lg-block({
-        height: 60px;
-        margin-top: 15px;
-        font-size: @sizeBasik;
-        border-width: 1px;
-      });
-      .md-block({
-        height: 50px;
-      });
-      .sm-block({
-        height: 40px;
-      });
+      margin-top: 15px;
+      font-size: @sizeBasik;
+      border-width: 1px;
+    });
+    .md-block({
+      height: 50px;
+    });
+    .sm-block({
+      height: 40px;
+    });
 
-      &:hover {
-        background-color: #fff;
-        color: @colorBasik;
-      }
+    &:hover {
+      background-color: #fff;
+      color: @colorBasik;
+    }
+    &-bottom{
+
     }
   }
 }
