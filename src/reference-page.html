@@ -162,6 +162,12 @@
           <img src="img/reference-page/gallery.jpg" alt="">
         </figure>
       </div>
+      <div class="pagerNavigation pagerNavigation-bottom">
+        <span class="bottom"><i class="fa fa-angle-left"></i></span>
+      </div>
+      <div class="pagerNavigation pagerNavigation-top">
+        <span class="top"><i class="fa fa-angle-right"></i></span>
+      </div>
       <div class="slider-nav-thumbnails">
         <div><img src="img/reference-page/thumb-1.jpg" alt=""></div>
         <div><img src="img/reference-page/thumb-2.jpg" alt=""></div>
@@ -281,6 +287,8 @@
   $('.slider-nav-thumbnails').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
+    nextArrow: $('.pagerNavigation .bottom'),
+    prevArrow: $('.pagerNavigation .top'),
     asNavFor: '.slider',
     dots: false,
     focusOnSelect: true,

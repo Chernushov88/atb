@@ -18,7 +18,8 @@
     <div class="header-top sm-hide">
       <ul>
         <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="sm-hide">Москва</span></a></li>
-        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span class="sm-hide">Личный кабинет</span></a></li>
+        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span class="sm-hide">Личный кабинет</span></a>
+        </li>
         <li class="lang"><a href="#">EN</a></li>
       </ul>
     </div>
@@ -36,15 +37,38 @@
         <ul class="menu">
           <li>
             <a href="#"><span>О Компании</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="sub">
+              <ul class="sub-in">
+                <li><a href="#">АТБ Электроника</a></li>
+                <li><a href="#">Наша команда</a></li>
+                <li><a href="#">вакансии</a></li>
+                <li><a href="#">Реализованные проекты</a></li>
+                <li><a href="#">Пресс-центр</a></li>
+                <li><a href="#">Контакты</a></li>
+              </ul>
+            </div>
           </li>
           <li>
             <a href="#"><span>Разработка</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
           </li>
-          <li class="production">
+          <li>
             <a href="#"><span>Производство</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
             <div class="sub">
               <ul class="sub-in">
-                <li><a href="#">Сборка приборов</a></li>
+                <li>
+                  <a href="#">Сборка приборов</a>
+                  <div class="sub-level3">
+                    <ul class="sub-level3-in">
+                      <li><a href="#">Сборка приборов</a></li>
+                      <li><a href="#">Изготовление электронных модулей</a></li>
+                      <li><a href="#">Производство печатных плат</a></li>
+                      <li><a href="#">производственные мощности</a></li>
+                      <li><a href="#">Контроль качества</a></li>
+                      <li><a href="#">Реализованные проекты</a></li>
+                      <li><a href="#">Как мы работаем?</a></li>
+                    </ul>
+                  </div>
+                </li>
                 <li><a href="#">Изготовление электронных модулей</a></li>
                 <li><a href="#">Производство печатных плат</a></li>
                 <li><a href="#">производственные мощности</a></li>
@@ -56,13 +80,28 @@
           </li>
           <li>
             <a href="#"><span>Отрасли</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="sub">
+              <ul class="sub-in">
+                <li class="active"><a href="#">Сельское хозяйство</a></li>
+                <li><a href="#">Добыча полезных ископаемых</a></li>
+                <li><a href="#">Автоматизация промышленного производства</a></li>
+                <li><a href="#">Строительство и ЖКХ</a></li>
+                <li><a href="#">Телекоммуникации, связь и ИТ-инфраструктура</a></li>
+                <li><a href="#">Железнодорожный транспорт, метрополитен</a></li>
+                <li><a href="#">Судовое оборудование, Инфраструктура</a></li>
+                <li><a href="#">Цифровизация (IOT)</a></li>
+                <li><a href="#">Медицинская техника</a></li>
+                <li><a href="#">Автотранспорт, логистика, транспортная инфраструктура</a></li>
+              </ul>
+            </div>
           </li>
         </ul>
         <div class="qrcode"><img src="img/qrcode.png" alt=""></div>
       </div>
       <div class="callback-phone">
         <a href="tel:88005005370" target="_blank" class="phone">8 800 500 53 70</a>
-        <a href="javascript:void(0);" class="callback sm-hide" onclick="showPopup('#requestCallPopup')">Заказать звонок</a>
+        <a href="javascript:void(0);" class="callback sm-hide" onclick="showPopup('#requestCallPopup')">Заказать
+          звонок</a>
       </div>
       <button class="touch touch_menu" onclick="touchMenu(this, '#menu')">
         <span class="icon-bar"></span>
@@ -73,8 +112,12 @@
   </div>
 </header>
 <section class="baner">
-  <div class="home-baner sm-hide"> <img src="img/home-baner.jpg" alt=""></div>
-  <div class="home-baner sm-visible"> <img src="img/home-baner-sm.jpg" alt=""></div>
+  <div class="home-baner sm-hide">
+<!--    <img src="img/home-baner.jpg" alt="">-->
+  </div>
+  <div class="home-baner sm-visible">
+<!--    <img src="img/home-baner-sm.jpg" alt="">-->
+  </div>
 
   <div class="full-container">
     <div class="baner-desc">

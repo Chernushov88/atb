@@ -277,6 +277,10 @@
                         line-height: 20px;
                         background: #11345c;
                         color: #fff;
+                        &:hover{
+                          background: #fff;
+                          color: #11345c;
+                        }
                         .lg-block({
                           height: 60px;
                           padding-left: 30px;
@@ -698,20 +702,32 @@
   .home-baner {
     display: block;
     width: 100%;
-
+    height: calc(100vh - 147px);
+    background: url("../img/home-baner.jpg") no-repeat;
+    background-size: cover !important;
+    .lg-block({
+      height: calc(100vh - 121px);
+    });
+    .md-block({
+      height: calc(100vh - 107px);
+    });
+    &>img{
+      height: 100%;
+      width: auto ;
+      max-width: initial;
+    }
     img {
       display: block;
-      width: 100%;
     }
 
     .lg-block({
-
+      background: url("../img/home-baner-lg.jpg") no-repeat;
     });
     .md-block({
-
+      background: url("../img/home-baner-md.jpg") no-repeat;
     });
     .sm-block({
-
+      background: url("../img/home-baner-sm.jpg") no-repeat;
       img {
         display: block;
         width: 100%;
@@ -1019,13 +1035,11 @@
 .owl-carousel {
   &.owl-theme-blue {
     color: #fff;
-
     .section-slider-desc {
       background: @colorBasik url("../img/section-slider-line-blue.png") no-repeat center;
       background-size: cover;
     }
   }
-
   &.owl-theme-white {
     background: #fff;
     color: @colorBasik;
@@ -1135,7 +1149,7 @@
     position: absolute;
     bottom: 60px;
     .lg-block({
-      bottom: 45px;
+      bottom: 40px;
     });
     .md-block({
       left: 70px !important;
@@ -1207,9 +1221,16 @@
     .md-block({
       //width: 50%;
     });
+    .sm-block({
+      margin-bottom: 20px;
+    });
   }
 
   &-social {
+    .md-block({
+      padding: 0 15px 15px;
+    });
+
     ul {
       display: flex;
 
@@ -1273,9 +1294,10 @@
         width: 180px;
         height: 30px;
         text-align: center;
-        line-height: 2;
+        line-height: 1.6;
         font-size: @sizeBasik - 1;
         background: #fff;
+        border: 1px solid #fff;
         .lg-block({
           width: 130px;
           height: 26px;
@@ -1297,7 +1319,7 @@
       }
 
       .md-block({
-        padding-top: 30px;
+        margin-bottom: 20px;
       });
     }
 
@@ -1842,6 +1864,7 @@ div.baner-emblem {
 /*------------- completed-projects -----------------*/
 .completed-projects {
   padding-top: 110px;
+  padding-bottom: 0 !important;
   .lg-block({
     padding-top: 70px;
     .section-slider-desc-in {
@@ -1904,7 +1927,7 @@ div.baner-emblem {
   .btn {
     position: absolute;
     right: 80px;
-    bottom: 40px;
+    bottom: 30px;
     .lg-block({
       right: 50px;
     });
@@ -2529,6 +2552,38 @@ ul.list {
     .md-block({
       margin-top: 40px;
     });
+  }
+  .pagerNavigation{
+    &-bottom{
+      width: 60px;
+      height: 60px;
+      margin-top: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: @sizeBasik + 6;
+      color: #fff;
+      background: @colorBasik;
+      border: 2px solid @colorBasik;
+      outline: 0;
+      .transition(0.5s);
+      .lg-block({
+        height: 60px;
+        margin-top: 15px;
+        font-size: @sizeBasik;
+        border-width: 1px;
+      });
+      .md-block({
+        height: 50px;
+      });
+      .sm-block({
+        height: 40px;
+      });
+
+      &:hover {
+        background-color: #fff;
+        color: @colorBasik;
+      }
+    }
   }
 }
 

@@ -193,7 +193,8 @@ select {
     text-transform: uppercase;
     text-decoration: none !important;
     color: @colorBasik;
-    outline: 1px solid @colorBasik;
+    border: 1px solid @colorBasik;
+    outline: 0 !important;
     .lg-block({
       height: 40px;
     });
@@ -226,13 +227,14 @@ select {
   .drop {
     margin: 0;
     padding: 0;
-    width: calc(100% - 0px);
+    width: calc(100% - 2px);
     border: 1px solid @colorBasik;
     border-bottom: none;
+    border-top: 0;
     display: none;
     position: absolute;
     top: 100%;
-    left: -1px;
+    left: 0px;
     z-index: 100;
     text-align: center;
     background: #fff;
@@ -393,7 +395,7 @@ a {
   }
 
   .lg-block({
-    max-width: 980px;
+    max-width: 1080px;
   });
   .md-block({
     max-width: 620px;
