@@ -14,12 +14,23 @@ body {
   background: #fff;
   color: @colorBasik;
   letter-spacing: 1px;
+  &.no-scroll{
+    overflow: hidden;
+  }
   .lg-block({
     font-size: @sizeBasik - 5;
   });
   .md-block({
     font-size: @sizeBasik - 5;
   });
+  .sm-block({
+    letter-spacing: 0px;
+    .transition(0s);
+  });
+}
+*{
+  box-sizing: content-box;
+  font-family: 'RFDewiExpanded';
 }
 
 body .wrap {
@@ -378,12 +389,14 @@ a {
 .container {
   position: relative;
   .wrapper();
+  display: block;
   max-width: 1580px;
   outline: 0px solid #f9f303;
 
   &-sm {
     position: relative;
     .wrapper();
+    display: block;
     max-width: 1260px;
     outline: 0px solid #0372f9;
     .lg-block({
@@ -392,6 +405,9 @@ a {
     .md-block({
       max-width: 620px;
     });
+    .sm-block({
+      max-width: calc(100% - 30px);
+    });
   }
 
   .lg-block({
@@ -399,6 +415,9 @@ a {
   });
   .md-block({
     max-width: 620px;
+  });
+  .sm-block({
+    max-width: calc(100% - 30px);
   });
 }
 

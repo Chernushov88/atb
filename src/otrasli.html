@@ -1,331 +1,417 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--  <link rel="shortcut icon" href="img/favicon.ico">-->
-  <title>otrasli</title>
-  <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-<header class="header hover">
-  <div class="full-container">
-    <div class="header-top sm-hide">
-      <ul>
-        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="sm-hide">Москва</span></a></li>
-        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span class="sm-hide">Личный кабинет</span></a>
-        </li>
-        <li class="lang"><a href="#">EN</a></li>
-      </ul>
-    </div>
-    <div class="header-center">
-      <a href="/" class="logo"><img src="img/logo.png" alt=""></a>
-      <ul class="sm-visible login-lang">
-        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-        <li class="lang"><a href="#">EN</a></li>
-      </ul>
-      <div id="menu" class="menu-js">
-        <div class="menu-btn-top">
-          <a href="/" class="logo"><img src="img/logo.png" alt=""></a>
-          <a href="#" class="close"><img src="img/close.png" alt=""></a>
+<div class="page_modal">
+  <a href="/wp-content/themes/envo-storefront/img/close.png" class="close"></a>
+  <div class="page_modal-left">
+    <form id="tova" class="form-signin">
+      <div class="step step-1">
+        <div class="h2">申请加入名人</div>
+        <div class="h3">如果您拥有粉丝并想加入 Ming 作为名人，
+          则可以在这里进行注册，我们会尽快与您联系。
         </div>
-        <ul class="menu">
-          <li>
-            <a href="#"><span>О Компании</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <div class="sub">
-              <ul class="sub-in">
-                <li><a href="#">АТБ Электроника</a></li>
-                <li><a href="#">Наша команда</a></li>
-                <li><a href="#">вакансии</a></li>
-                <li><a href="#">Реализованные проекты</a></li>
-                <li><a href="#">Пресс-центр</a></li>
-                <li><a href="#">Контакты</a></li>
-              </ul>
+        <div class="input-group">
+          <input name="username" type="text" placeholder="用户名" id="username" class="form-control" value="" required>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" value="" placeholder="邮箱" id="email" class="form-control" required="">
+        </div>
+        <div class="input-group">
+          <input name="password" type="password" placeholder="密碼" id="password" class="form-control" value="" required>
+          <button class="eye"><img src="/wp-content/themes/envo-storefront/img/eye.png" alt=""></button>
+        </div>
+        <button type="button" onclick="nextStep('.step-2',1)" class="btn gradient-horizontal">注冊</button>
+        <p>注册即表示您同意 MingMing <a href="#">服务条款</a> 和 <a href="#">隐私政策</a></p>
+      </div>
+      <div class="step step-2 hidden">
+        <div style="display:none" id="idu"></div>
+        <div style="display:none" id="zak"></div>
+        <div id="wher" class="form-group">
+          <label for="networkType">Where can we find you?</label>
+          <div id="myTabs ">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs style-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#tabs-social-1" aria-controls="tabs-social-1" role="tab"
+                                                        data-toggle="tab">Microblogs</a></li>
+              <li role="presentation"><a href="#tabs-social-2" aria-controls="tabs-social-2" role="tab"
+                                         data-toggle="tab">Messaging</a></li>
+              <li role="presentation"><a href="#tabs-social-3" aria-controls="tabs-social-3" role="tab"
+                                         data-toggle="tab">Video</a></li>
+              <li role="presentation"><a href="#tabs-social-4" aria-controls="tabs-social-4" role="tab"
+                                         data-toggle="tab">Short video</a></li>
+              <li role="presentation"><a href="#tabs-social-5" aria-controls="tabs-social-5" role="tab"
+                                         data-toggle="tab">Live streaming</a></li>
+              <li role="presentation"><a href="#tabs-social-6" aria-controls="tabs-social-6" role="tab"
+                                         data-toggle="tab">Audio and Broadcasting</a></li>
+              <li role="presentation"><a href="#tabs-social-7" aria-controls="tabs-social-7" role="tab"
+                                         data-toggle="tab">Music</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="tabs-social-1">
+                <ul class="tabpanel-cheket">
+                  <li>
+                    <label for="tabs-social-1-1">
+                      <input type="checkbox" id="tabs-social-1-1"><span>Weibo</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-1-2">
+                      <input type="checkbox" id="tabs-social-1-2"><span>Qzone</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-1-3">
+                      <input type="checkbox" id="tabs-social-1-3"><span>Facebook</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-1-4">
+                      <input type="checkbox" id="tabs-social-1-4"><span>Twitter</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-1-5">
+                      <input type="checkbox" id="tabs-social-1-5"><span>Youtube</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tabs-social-2">
+                <ul class="tabpanel-cheket">
+                  <li>
+                    <label for="tabs-social-2-1">
+                      <input type="checkbox" id="tabs-social-2-1"><span>Wechat</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-2-2">
+                      <input type="checkbox" id="tabs-social-2-2"><span>QQ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-2-3">
+                      <input type="checkbox" id="tabs-social-2-3"><span>Aliwangwang</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tabs-social-3">
+                <ul class="tabpanel-cheket">
+                  <li>
+                    <label for="tabs-social-3-1">
+                      <input type="checkbox" id="tabs-social-3-1"><span>iQiyi</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-3-2">
+                      <input type="checkbox" id="tabs-social-3-2"><span>Sohu TV</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-3-3">
+                      <input type="checkbox" id="tabs-social-3-3"><span>LeTV</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-3-4">
+                      <input type="checkbox" id="tabs-social-3-4"><span>Bilibili</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-3-5">
+                      <input type="checkbox" id="tabs-social-3-5"><span>Youku</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-3-6">
+                      <input type="checkbox" id="tabs-social-3-6"><span>Tudou</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-3-7">
+                      <input type="checkbox" id="tabs-social-3-7"><span>Tencent Video</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-3-8">
+                      <input type="checkbox" id="tabs-social-3-8"><span>Acfun</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tabs-social-4">
+                <ul class="tabpanel-cheket">
+                  <li>
+                    <label for="tabs-social4-1">
+                      <input type="checkbox" id="tabs-social4-1"><span>Miaopai</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social4-2">
+                      <input type="checkbox" id="tabs-social4-2"><span>Kuaishou</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social4-3">
+                      <input type="checkbox" id="tabs-social4-3"><span>Meipai</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social4-4">
+                      <input type="checkbox" id="tabs-social4-4"><span>Douyin</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social4-5">
+                      <input type="checkbox" id="tabs-social4-5"><span>Pear Video</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social4-6">
+                      <input type="checkbox" id="tabs-social4-6"><span>Warermelon TV</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social4-7">
+                      <input type="checkbox" id="tabs-social4-7"><span>Hypstar</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tabs-social-5">
+                <ul class="tabpanel-cheket">
+                  <li>
+                    <label for="tabs-social-5-1">
+                      <input type="checkbox" id="tabs-social-5-1"><span>Inke</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-5-2">
+                      <input type="checkbox" id="tabs-social-5-2"><span>Douyu</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-5-3">
+                      <input type="checkbox" id="tabs-social-5-3"><span>Huajiao</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-5-4">
+                      <input type="checkbox" id="tabs-social-5-4"><span>Yizhibo</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-5-5">
+                      <input type="checkbox" id="tabs-social-5-5"><span>YY TV</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social-5-6">
+                      <input type="checkbox" id="tabs-social-5-6"><span>Panda TV</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tabs-social-6">
+                <ul class="tabpanel-cheket">
+                  <li>
+                    <label for="tabs-social6-1">
+                      <input type="checkbox" id="tabs-social6-1"><span>Ximalaya FM</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social6-2">
+                      <input type="checkbox" id="tabs-social6-2"><span>Qingting FM</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-social6-3">
+                      <input type="checkbox" id="tabs-social6-3"><span>Lizhi FM</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tabs-social-7">
+                <ul class="tabpanel-cheket">
+                  <li>
+                    <label for="tabs-socia7-1">
+                      <input type="checkbox" id="tabs-socia7-1"><span>Netease Music</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-socia7-2">
+                      <input type="checkbox" id="tabs-socia7-2"><span>QQ Music</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-socia7-3">
+                      <input type="checkbox" id="tabs-socia7-3"><span>Xiami Music</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-socia7-4">
+                      <input type="checkbox" id="tabs-socia7-4"><span>Kuguo music</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="tabs-socia7-5">
+                      <input type="checkbox" id="tabs-socia7-5"><span>Kuwo Music</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </li>
-          <li>
-            <a href="#"><span>Разработка</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-          </li>
-          <li class="-production">
-            <a href="#"><span>Производство</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <div class="sub">
-              <ul class="sub-in">
-                <li><a href="#">Сборка приборов</a></li>
-                <li><a href="#">Изготовление электронных модулей</a></li>
-                <li><a href="#">Производство печатных плат</a></li>
-                <li><a href="#">производственные мощности</a></li>
-                <li><a href="#">Контроль качества</a></li>
-                <li><a href="#">Реализованные проекты</a></li>
-                <li><a href="#">Как мы работаем?</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="act">
-            <a href="#"><span>Отрасли</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <div class="sub">
-              <ul class="sub-in">
-                <li class="active"><a href="#">Сельское хозяйство</a></li>
-                <li><a href="#">Добыча полезных ископаемых</a></li>
-                <li><a href="#">Автоматизация промышленного производства</a></li>
-                <li><a href="#">Строительство и ЖКХ</a></li>
-                <li><a href="#">Телекоммуникации, связь и ИТ-инфраструктура</a></li>
-                <li><a href="#">Железнодорожный транспорт, метрополитен</a></li>
-                <li><a href="#">Судовое оборудование, Инфраструктура</a></li>
-                <li><a href="#">Цифровизация (IOT)</a></li>
-                <li><a href="#">Медицинская техника</a></li>
-                <li><a href="#">Автотранспорт, логистика, транспортная инфраструктура</a></li>
-              </ul>
-            </div>
-          </li>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="handle">Your account</label>
+          <div class="input-group" style="width:100%"><input type="text" name="handle" value=""
+                                                             placeholder="@jimmybuffet" id="handle"
+                                                             class="form-control"></div>
+        </div>
+        <div class="form-group">
+          <label for="followerCount">How many followers do you have?</label>
+          <select id="followerCount" name="followerCount" class="form-control">
+            <option selected="" value=""> 0 - 100k</option>
+            <option value=""> 100k - 300k</option>
+            <option value="">300k - 1000k</option>
+            <option value="">1000k+</option>
+          </select>
+        </div>
+        <button type="button" onclick="nextStep('.step-3',2)" class="btn btn-block btn-login">Submit</button>
+      </div>
+      <div class="step step-3 hidden">
+        <div class="form-group">
+          <div id="fiy" class="fiy">
+            <img class="attachment-thumbnail size-thumbnail wp-post-image" alt="" id="fiyImg">
+            <img class="fiy-status hidden" src="/wp-content/themes/envo-storefront/img/Copper.png" alt="">
+          </div>
+          <label for="addPhoto">Add your photo</label>
+          <div class="input-group input-addFile">
+            <input type="file" onchange="seno()" name="file" id="addPhoto" class="inputfile">
+            <label for="addPhoto" class="form-control"><span></span><a class="btn btn-primary btn-addFile">Add file</a></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="selfPrasentation">Self-presentation</label>
+          <div class="input-group">
+            <textarea name="selfPrasentation" type="text" value="Cool one!" placeholder="Actor Chicago fire"
+                      id="selfPrasentation" class="form-control "></textarea>
+          </div>
+        </div>
+        <br>
+        <div class="input-group chooseCategory">
+          <label for="">Who are you? Choose category</label>
+          <div class="input-group">
+            <?
+                  $args = array(
+                         'taxonomy' => 'product_cat',
+            'hide_empty' => false,
+            );
+
+            $product_categories = get_terms( $args );
+            $z=0;
+            foreach ($product_categories as $cat)
+            {
+            if ($cat->term_id!=15)
+            {
+
+            ?>
+            <div><input
+              <?
+				  if ($z==0)
+				  {
+					 ?>
+              checked="checked"
+              <?
+				  }
+				  ?>
+
+              type="checkbox" value="<?=$cat->name?>" rel="<?=$cat->term_id?>" name="che" class="che"><label><?=$cat->
+                name?></label></div>
+            <?
+				$z++;
+                  }
+				  else
+				  {
+			  ?>
+            <input checked="checked" style="display:none" type="checkbox" value="<?=$cat->name?>"
+                   rel="<?=$cat->term_id?>" name="che" class="che">
+
+
+            <?
+                  }
+
+					 }
+                  ?>
+          </div>
+        </div>
+        <!--<div class="form-group">
+          <label for="descripOrder">Description</label>
+          <div class="input-group">
+            <textarea name="descripOrder" id="descripOrder" cols="30" rows="10" class="form-control " placeholder="subtitle"></textarea>
+          </div>
+        </div>-->
+        <button type="button" onclick="cheketCheckbox();" class="btn btn-block btn-login">Submit</button>
+      </div>
+      <div class="step step-4 hidden">
+        <h4>And the final step - record presentation video for Mingming!</h4>
+        <ul>
+          <li>You will need:</li>
+          <li>1) represent yourself</li>
+          <li>2) say "Special for Mingming"</li>
         </ul>
-        <div class="qrcode"><img src="img/qrcode.png" alt=""></div>
+        <div class="text-en">
+          Please record a video to briefly introduce yourself, share the news of joining MingMing, and tell your fans
+          that you would be happy to make a video for them, for example, congratulating them on their birthday, simply
+          saying hi to their family and friends, or fulfilling any other request you would like to. Be creative and make
+          a video in your own style.
+        </div>
+        <div class="text-chine">
+          請錄製自我簡介的視頻，分享並加入明名MINGMING的新聞，以及告訴您的粉絲，您很樂意為他們製作視頻。例如：祝賀粉絲們的生日，向他們的家人和朋友打招呼或滿足他們的其他要求。發揮您的創意，以製作包含您個人風格的視頻。
+        </div>
+        <button type="button" class="btn btn-block btn-login" onclick="moving(this,'111')">Record</button>
       </div>
-      <div class="callback-phone">
-        <a href="tel:88005005370" target="_blank" class="phone">8 800 500 53 70</a>
-        <a href="javascript:void(0);" class="callback sm-hide" onclick="showPopup('#requestCallPopup')">Заказать
-          звонок</a>
-      </div>
-      <button class="touch touch_menu" onclick="touchMenu(this, '#menu')">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-  </div>
-  <div class="sub-md-menu md-visible">
-    <ul class="sub-md-menu-in">
-      <li><a href="#"></a>Сельское хозяйство</li>
-      <li><a href="#">Добыча полезных ископаемых</a></li>
-      <li><a href="#">Автоматизация промышленного производства</a></li>
-      <li><a href="#">Строительство и ЖКХ</a></li>
-      <li><a href="#">Телекоммуникации, связь и ИТ-инфраструктура</a></li>
-      <li><a href="#">Железнодорожный транспорт, метрополитен</a></li>
-      <li><a href="#">Судовое оборудование, Инфраструктура</a></li>
-      <li><a href="#">Цифровизация (IOT)</a></li>
-      <li><a href="#">Медицинская техника</a></li>
-      <li><a href="#">Автотранспорт, логистика, транспортная инфраструктура</a></li>
-    </ul>
-  </div>
-</header>
+      <div class="step step-5 hidden">
+        <h4>And the final step - record presentation video for Mingming!</h4>
+        <ul>
+          <li>You will need:</li>
+          <li>1) represent yourself</li>
+          <li>2) say "Special for Mingming"</li>
+        </ul>
 
-<section class="breadcrumbs">
-  <div class="full-container">
-    <ul>
-      <li><a href="#">Главная →</a></li>
-      <li><span>отрасли</span></li>
-    </ul>
-  </div>
-</section>
+        <div class="defalt-state-video">
+          <a id="idp1" target="_blank" href="javascript:void(0)"><img
+              src="/wp-content/themes/envo-storefront/img/player.png" alt=""></a>
+          <!--<a id="idp2" target="_blank" href="javascript:void()"><img src="/wp-content/themes/envo-storefront/img/player.png" alt=""></a>
+  -->
+        </div>
 
-<section class="baner baner-otrasli">
-  <h1>отрасли</h1>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/1.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/1-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Сельское хозяйство</div>
+        <div class="text-en">
+          Please record a video to briefly introduce yourself, share the news of joining MingMing, and tell your fans
+          that you would be happy to make a video for them, for example, congratulating them on their birthday, simply
+          saying hi to their family and friends, or fulfilling any other request you would like to. Be creative and make
+          a video in your own style.
+        </div>
+        <div class="text-chine">
+          請錄製自我簡介的視頻，分享並加入明名MINGMING的新聞，以及告訴您的粉絲，您很樂意為他們製作視頻。例如：祝賀粉絲們的生日，向他們的家人和朋友打招呼或滿足他們的其他要求。發揮您的創意，以製作包含您個人風格的視頻。
+        </div>
+        <div class="button-wrapp">
+          <button type="button" class="btn btn-block btn-login" onclick="moving(this,'111')">Re Record</button>
+          <button type="button" onclick="subfinish()" class="btn btn-block btn-login">Submit</button>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/2.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/2-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Добыча полезных ископаемых</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/3.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/3-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Автоматизация промышленного производства</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/4.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/4-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Строительство и ЖКХ</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/5.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/5-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Телекоммуникации, связь и ИТ-инфраструктура</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/6.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/6-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Железнодорожный транспорт, метрополитен</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/7.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/7-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Судовое оборудование, Инфраструктура</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/8.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/8-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Цифровизация (IOT)</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/9.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/9-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Медицинская техника</div>
-      </div>
-    </div>
-  </div>
-  <div class="baner-col">
-    <div class="home-baner sm-hide"><img src="img/otrasli-page/10.jpg" alt=""></div>
-    <div class="home-baner sm-visible"><img src="img/otrasli-page/10-sm.jpg" alt=""></div>
-    <div class="full-container">
-      <div class="baner-emblem reference-page-baner">
-        <div class="h3">Автотранспорт, логистика, транспортная инфраструктура</div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<section class="questions">
-  <div class="container">
-    <div class="h2">Остались вопросы?</div>
-    <form action="">
-      <p>Отправьте заявку, наш менеджер свяжется с вами в течение дня и ответит на все интересующие вопросы</p>
-      <ul>
-        <li>
-          <input type="text" placeholder="Имя *" required>
-          <input type="text" placeholder="E-mail *" class="phone">
-        </li>
-        <li>
-          <img src="img/captca-bg.jpg" alt="">
-          <p>Нажимая кнопку «Отправить», я подтверждаю свою дееспособность, согласие на обработку персональных данных в
-            соответствии с указанным здесь текстом</p>
-        </li>
-      </ul>
-      <button type="submit">отправить</button>
     </form>
+    <div id="su" style="display:none">Success</div>
   </div>
-</section>
-<footer class="footer">
-  <div class="container">
-    <a href="#" class="footer-logo">
-      <img src="img/logo-footer.png" alt="">
-    </a>
-    <div class="footer-social">
-      <div class="h5">Следуйте за нами</div>
-      <ul>
-        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-      </ul>
+  <div class="page_modal-right gradient-vertical">
+    <div class="h1">应用程式 <br>现己登陆</div>
+    <ul class="flex">
+      <li><a href="#"><img src="/wp-content/themes/envo-storefront/img/google-play.png" alt=""></a></li>
+      <li><a href="#"><img src="/wp-content/themes/envo-storefront/img/app-store.png" alt=""></a></li>
+    </ul>
+    <div class="grcode">
+      <a href="#"><img src="/wp-content/themes/envo-storefront/img/grcode.jpg" alt=""></a>
     </div>
-    <div class="col-contact">
-      <div class="h5">Связаться через</div>
-      <a href="#">Whatsapp</a>
-    </div>
-
-    <div class="col-contact">
-      <div class="h5">Связаться через</div>
-      <a href="#">E-mail</a>
-    </div>
-    <a href="#" class="callback sm-visible" onclick="showPopup('#applicationSent')">Заказать звонок</a>
-    <div class="col-info">
-      <a href="#">Правовая информация</a>
-      <p><span>© 2005–2020</span> ООО «АТБ Электроника» <br>Разработано в РА VOZDUH</p>
-    </div>
-  </div>
-</footer>
-<div class="popup" id="requestCallPopup">
-  <a href="#" class="close" onclick="hidePopup('#requestCallPopup')">
-    <img src="img/close.png" alt="">
-  </a>
-  <div class="popup-in">
-    <div class="h3">Оставьте заявку</div>
-    <form action="">
-      <input type="text" placeholder="Имя *" required>
-      <input type="text" placeholder="E-mail *" class="phone">
-      <div class="checkbox-block">
-        <input type="checkbox" class="checkbox"  id="check" checked="checked">
-        <label for="check">
-          <span>Ознакомлен с политикой конфиденциальности</span>
-        </label>
-      </div>
-      <button type="submit">отправить</button>
-    </form>
   </div>
 </div>
-<div class="popup" id="applicationSent">
-  <a href="#" class="close" onclick="hidePopup('#applicationSent')">
-    <img src="img/close.png" alt="">
-  </a>
-  <div class="popup-in">
-    <div class="h3">Заявка отправлена</div>
-    <p>Потребительская культура переворачивает рейтинг, стиль необходимостью.</p>
-  </div>
+
 </div>
-<div class="darken"></div>
-<div id="scroll"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></div>
-
-<script src="js/main.js"></script>
-<script>
-  $('.slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    fade: false,
-    asNavFor: '.slider-nav-thumbnails',
-  });
-
-  $('.slider-nav-thumbnails').slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    asNavFor: '.slider',
-    dots: false,
-    focusOnSelect: true,
-    centerPadding: '60px',
-  });
-
-  // Remove active class from all thumbnail slides
-  $('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
-
-  // Set active class to first thumbnail slides
-  $('.slider-nav-thumbnails .slick-slide').eq(0).addClass('slick-active');
-
-  // On before slide change match active thumbnail to current slide
-  $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    var mySlideNumber = nextSlide;
-    $('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
-    $('.slider-nav-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
-  });
-</script>
-</body>
-</html>

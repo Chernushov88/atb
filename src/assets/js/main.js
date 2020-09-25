@@ -12,7 +12,7 @@ $(function ($) {
   if (ua.search(/MSIE/) > 0) console.log('Internet Explorer');
 
   /* -- owl-carusel ---*/
-  $('#association-slider, #responsibility-slider, #about-baner-slider, #completed-projects, #completed-projects2, #completed-projects3, #completed-projects4, #completed-projects5').owlCarousel({
+  $('.owl-init-slider, #association-slider, #responsibility-slider, #about-baner-slider, #completed-projects, #completed-projects2, #completed-projects3, #completed-projects4, #completed-projects5').owlCarousel({
     margin: 0,
     items: 1,
     autoplayTimeout: 30000,
@@ -20,6 +20,8 @@ $(function ($) {
     dots: true,
     nav: true,
     loop: true,
+    autoHeightClass: 'owl-height',
+    autoHeight:true,
     navText: ["<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>"],
     responsive: {
       768: {
@@ -74,14 +76,24 @@ $(function ($) {
     idleTime: 3,
   });
 
-
+  var headerHeight = $(".header").height()
+  headerHeight = headerHeight  + 'px';
+  console.log(headerHeight);
   $(window).bind('scroll', function () {
-    if ($(window).scrollTop() > 120) {
-      $('#scroll').fadeIn();
+    if ($(window).scrollTop() > 150) {
       $(".header").addClass('fixed');
+      $("body").css('marginTop', headerHeight);
+      console.log( $("body").css('margitTop') );
     } else {
-      $('#scroll').fadeOut();
       $(".header").removeClass('fixed');
+      $("body").css('marginTop', 0);
+      console.log( $("body").css('margitTop') );
+    }
+
+    if ($(window).scrollTop() > 200) {
+      $('#scroll').addClass('active');
+    } else {
+      $('#scroll').removeClass('active');
     }
   });
   // $(window).scroll(function(){
@@ -161,23 +173,36 @@ $(function ($) {
       if ($('.header').hasClass('hover')){
         let subHeight = $('.menu .act .sub').height();
         document.querySelector('.header').style.marginBottom = subHeight + 'px'
-        console.log($('.header'))
-        console.log(subHeight)
+        //console.log($('.header'))
+        //console.log(subHeight)
       }else{
-        console.log('none class hover')
+        //console.log('none class hover')
       }
-    }, 100)
+    }, 1000)
   }
   if ($(window).width() < 1200) {
-    console.log('$(window).width() < 1200', $(window).width())
-    $('.menu li').click(function () {
-      $(this).toggleClass('active')
+    //console.log('$(window).width() < 1200', $(window).width())
+
+    $('.menu > li .fa').click(function (e) {
+      if( $(this).hasClass('btn-level3') ){
+        $(this).parents('li').toggleClass('activeLevel3')
+        //console.log('11')
+      }else{
+        $(this).parents('li').toggleClass('active')
+        //console.log('000')
+      }
+
     })
   }
 
 });
 $(document).mouseup(function (e) {
   var container = $(".drop");
+
+  $('.video').parent().children(".video").each(function(){
+    $(this).get(0).pause();
+  })
+  $('.video').parent().removeClass('video-is-playing');
 
   if ((container.has(e.target).length === 0)) {
     container.slideUp(150);
@@ -190,24 +215,27 @@ function showPopup(target, elem, img, imgSm, arr) {
   $(target).addClass('open');
   if (elem){
     let title = elem.innerText;
-    console.log(title)
+    //console.log(title)
     document.querySelector(`${target} .h3`).innerText = title
-    console.log(document.querySelector(`${target} .h3`).innerText)
+    //console.log(document.querySelector(`${target} .h3`).innerText)
     document.querySelector('#baner-img .img1').src = img;
     document.querySelector('#baner-img .img2').src = imgSm;
-    console.log(document.querySelector('#baner-img').src)
-    console.log(img)
+    //console.log(document.querySelector('#baner-img').src)
+    //console.log(img)
     let list = document.querySelector(`${target} .list`)
     list.innerHTML = arr
   }
 }
 
 function hidePopup(target) {
+  document.body.classList.remove('no-scroll')
   $(".darken").removeClass('active')
   $(target).removeClass('open');
 }
 
 function touchMenu(elem, menu) {
+  document.body.classList.add('no-scroll')
+  //console.log('active')
   $(elem).toggleClass('active');
   $(menu).toggleClass('active');
   $('.darken').toggleClass('active');
@@ -215,27 +243,38 @@ function touchMenu(elem, menu) {
 }
 
 function addIconsMenu(menu) {
-  console.log(menu);
+  //console.log(menu);
   $(menu + ' li').each(function () {
     $(this).children('.add').click(function () {
-      console.log('click');
+      //console.log('click');
       $(this).toggleClass('active').parent('li').children('ul').toggleClass('show');
     });
   });
 };
 
 window.addEventListener('load', function () {
-  let darken = document.querySelector('.darken');
-  let menuJS = document.querySelector('.menu-js');
-  let menuALL = document.querySelectorAll('.menu > li');
-  let close = document.querySelector('.close');
-  let touch = document.querySelector('.touch_menu');
-  let popupAll = document.querySelectorAll('.popup')
+  let darken = document.querySelector('.darken'),
+      menuJS = document.querySelector('.menu-js'),
+      menuALL = document.querySelectorAll('.menu > li'),
+      close = document.querySelector('.close'),
+      touch = document.querySelector('.touch_menu'),
+      popupAll = document.querySelectorAll('.popup'),
+      buttonLevel3All = document.querySelectorAll('.button-level3')
 
 
+
+
+
+  buttonLevel3All.forEach((e)=>{
+    //console.log('e', e)
+    e.addEventListener('click', (event)=>{
+      //console.log('event', event)
+    })
+
+  })
 
   darken.addEventListener('click', function (e) {
-    console.log(e)
+    //console.log(e)
     darken.classList.remove('active');
     popupAll.forEach((e)=>{
       e.classList.remove('open');
@@ -244,11 +283,13 @@ window.addEventListener('load', function () {
     menuJS.classList.remove('active');
     touch.classList.remove('active');
     menuALL.forEach((e) => {
+      //console.log(e)
       e.classList.remove('active')
     })
   });
 
   close.addEventListener('click', function () {
+    document.body.classList.remove('no-scroll')
     darken.classList.remove('active');
     menuJS.classList.remove('active');
     touch.classList.remove('active');
@@ -267,7 +308,7 @@ window.addEventListener('load', function () {
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.maxHeight = panel.scrollHeight + 10000 + "px";
       }
     });
   }
@@ -325,16 +366,16 @@ window.addEventListener('load', function () {
 
 
 function send(url, form_id, result_div) {
-  console.log('url', url);
-  console.log('form_id', form_id);
-  console.log('result_div', result_div);
+  //console.log('url', url);
+  //console.log('form_id', form_id);
+  //console.log('result_div', result_div);
   jQuery.ajax({
     type: "POST",
     url: url,
     data: jQuery(form_id).serialize(),
     // Выводим то что вернул PHP
     success: function (html) {
-      console.log('success', html);
+      //console.log('success', html);
       jQuery(result_div).fadeIn(1800);
       jQuery(result_div).empty();
       jQuery(result_div).append(html);
@@ -346,7 +387,7 @@ function send(url, form_id, result_div) {
       }, 60000)
     },
     error: function (html) {
-      console.log('error', html);
+      //console.log('error', html);
       // jQuery(result_div).empty();
       // jQuery(result_div).append("Ошибка!");
     }
@@ -354,19 +395,44 @@ function send(url, form_id, result_div) {
 }
 
 
-// $(function() {
-//   var blockTop = $('.second').offset().top;
-//   var CountUpFlag = 0;
-//   var $window = $(window);
-//   $window.on('load scroll', function() {
-//     var top = $window.scrollTop();
-//     var height = $window.height();
-//     if (top + height >= blockTop && CountUpFlag == 0) {
-//       CountUp();
-//       CountUpFlag = 1;
-//     }
-//   });
-//   function CountUp() {
-//     $('#animation').show();
-//   }
-// });
+// (function (window, document) {
+//   "use strict";
+//   let videoControlAll = document.querySelectorAll('.video-control');
+//   videoControlAll.forEach( (e)=>{
+//     e.addEventListener('click', function(event){
+//       console.log(event)
+//       let $videoContainer = $(event.target.parentNode)[0],
+//         $video = event.target.nextElementSibling
+//
+//       console.log('$video', $video)
+//       if ($video.paused) {
+//         $video.play();
+//         $videoContainer.classList.add('video-is-playing');
+//       } else {
+//         $video.pause();
+//         $videoContainer.classList.remove('video-is-playing');
+//         //	возвращаем постер
+//         $video.load();
+//       }
+//     })
+//   })
+// })(window, document);
+
+$(function () {
+  $('.video').parent().click(function () {
+
+    if($(this).children(".video").get(0).paused){
+      $(this).children(".video").get(0).play();
+      $(this).children(".playpause").fadeOut();
+      $(this).addClass('video-is-playing');
+    }else{
+      $(this).children(".video").get(0).pause();
+      $(this).removeClass('video-is-playing');
+
+
+
+    }
+
+  });
+});
+
